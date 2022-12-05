@@ -1,0 +1,37 @@
+:host {
+  max-width: 30em;
+}
+
+h1 {
+  text-align: center;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  &:hover {
+    background: hsl(0, 100%, 98%);
+  }
+  widget-radio-input {
+    width: 3em;
+  }
+}
+
+input {
+  display: inline-block;
+  width: 3em;
+}
+
+.letter {
+  padding-right: 1em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.timer {
+  text-align: right;
+}
+

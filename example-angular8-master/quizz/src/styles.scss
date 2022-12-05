@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/normalize.css/normalize.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  // allow to zoom to make font bigger.
+  @media screen and (max-width: 1024px) {
+    font-size: 1em;
+  }
+  // for a big screen, the font stays big.
+  @media screen and (min-width: 1024px) {
+    font-size: 2.5vh;
+  }
+}
+
+main {
+  margin: 0 auto;
+  max-width: 40em;
+  padding: 0 0.5em;
+}
+
+button,
+input,
+textarea {
+  padding: 0.5em 1em;
+  border: 0.1em solid #eee;
+  margin: 0.5em 0;
+}
+
+button {
+  background: #eee;
+
+  &:not(:disabled) {
+    cursor: pointer;
+
+    &:hover {
+      border-color: #ddd;
+      background: #ddd;
+    }
+
+    &:active {
+      border-color: #ccc;
+      background: #ccc;
+    }
+
+    &.primary {
+      color: white;
+      background: #333;
+      border-color: #333;
+
+      &:hover {
+        border-color: #444;
+        background: #444;
+      }
+
+      &:active {
+        border-color: #555;
+        background: #555;
+      }
+    }
+  }
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+}
+
+input {
+  display: block;
+  width: 100%;
+}

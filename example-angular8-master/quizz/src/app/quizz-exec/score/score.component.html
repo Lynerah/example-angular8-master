@@ -1,0 +1,13 @@
+<ng-container *ngIf="quizz.current">
+  <ng-container *ngIf="quizz.progress.score === quizz.current.questions.length">
+    <fa-icon [icon]="faSmileWink"></fa-icon>
+    <h1>Bravo !</h1>
+  </ng-container>
+  <ng-container *ngIf="quizz.progress.score < quizz.current.questions.length">
+    <fa-icon [icon]="faPoo"></fa-icon>
+    <h1>Peut mieux faire !</h1>
+  </ng-container>
+  <p>Ton score : <span class="score">{{quizz.progress.score}}</span> /
+    <span>{{quizz.current.questions.length}}</span></p>
+  <button class="primary" routerLink="/">Retour accueil</button>
+</ng-container>

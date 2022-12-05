@@ -1,0 +1,22 @@
+<main *ngIf="quizz.current">
+  <div class="timer"><widget-timer [init]="10" (dringdring)="interrupt()"></widget-timer></div>
+  <h1>{{quizz.current.name}}</h1>
+  <h2>Question {{quizz.progress.questionId + 1}} / {{quizz.current.questions.length}}</h2>
+  <p>{{quizz.current.questions[quizz.progress.questionId].label}}</p>
+  <form [formGroup]="f" (ngSubmit)="submit()">
+    <div class="answers">
+      <label class="answer" *ngFor="let letter of ['A', 'B', 'C', 'D']">
+        <widget-radio-input>
+          <input type="radio" name="answer" [value]="letter" formControlName="answer">
+        </widget-radio-input>
+        <span class="letter">{{letter}}</span>
+        <span>{{quizz.current.questions[quizz.progress.questionId]['answer' + letter]}}</span>
+      </label>
+    </div>
+    <div class="buttons">
+      <button class="primary" [disabled]="f.invalid">Suivant</button>
+    </div>
+  </form>
+
+  <!-- {{f.value | json }} -->
+</main>
